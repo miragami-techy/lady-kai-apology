@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Lady Kai ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg1: #fff0f6;
+      --bg2: #ffe0ec;
+      --bg3: #ffeef8;
+      --pink: #ff78a8;
+      --pink-dark: #c65784;
+      --rose: #ffb8d1;
+      --lav: #f5dcff;
+      --text: #6b4353;
+      --soft: #8a6070;
+      --white: rgba(255,255,255,0.72);
+      --border: rgba(255,255,255,0.8);
+      --shadow: 0 24px 80px rgba(214, 118, 157, 0.22);
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #ffffff 0%, transparent 25%),
+        radial-gradient(circle at top right, #ffe0f0 0%, transparent 28%),
+        linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+      color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .sparkles,
+    .hearts,
+    .blobs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .blobs::before,
+    .blobs::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.55;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .blobs::before {
+      width: 280px;
+      height: 280px;
+      background: #ffd4e6;
+      top: 5%;
+      left: -60px;
+    }
+
+    .blobs::after {
+      width: 340px;
+      height: 340px;
+      background: #edd6ff;
+      right: -80px;
+      bottom: 5%;
+      animation-duration: 15s;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0) translateX(0) scale(1); }
+      to { transform: translateY(25px) translateX(18px) scale(1.08); }
+    }
+
+    .heart,
+    .sparkle {
+      position: absolute;
+      bottom: -30px;
+      opacity: 0.24;
+      animation: floatUp linear infinite;
+      user-select: none;
+    }
+
+    .sparkle {
+      opacity: 0.3;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.2;
+      }
+      to {
+        transform: translateY(-115vh) rotate(18deg) scale(1.35);
+        opacity: 0;
+      }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 18px;
+    }
+
+    .card {
+      width: min(920px, 100%);
+      background: var(--white);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.04));
+      pointer-events: none;
+    }
+
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ffd9e7, #ffeef6);
+      color: #9a5d75;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(255, 145, 186, 0.18);
+    }
+
+    .mini-pill {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid #ffd5e3;
+      color: #aa6682;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 10px 0 18px;
+    }
+
+    .hero-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 8px 16px rgba(255, 133, 179, 0.28));
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    h1 {
+      font-family: "Fredoka", sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4.3rem);
+      line-height: 1;
+      margin-bottom: 12px;
+      color: var(--pink-dark);
+      text-shadow: 0 6px 18px rgba(255, 141, 185, 0.18);
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+      color: var(--soft);
+      line-height: 1.8;
+    }
+
+    .letter-wrap {
+      position: relative;
+      z-index: 1;
+      margin-top: 26px;
+    }
+
+    .letter {
+      background: linear-gradient(180deg, rgba(255,249,252,0.96), rgba(255,241,247,0.92));
+      border: 1px solid #ffd8e4;
+      border-radius: 28px;
+      padding: 28px;
+      line-height: 1.95;
+      font-size: 1.05rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 14px 34px rgba(217, 137, 168, 0.12);
+      position: relative;
+    }
+
+    .letter::before {
+      content: "♡";
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 1.4rem;
+      color: #ff95ba;
+      opacity: 0.75;
+    }
+
+    .letter p + p {
+      margin-top: 14px;
+    }
+
+    .buttons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    button,
+    .ghost {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+      font-family: inherit;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #ff8cb5, #ff73a5);
+      color: white;
+      box-shadow: 0 14px 28px rgba(255, 118, 167, 0.28);
+    }
+
+    .primary:hover,
+    .ghost:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    .ghost {
+      background: rgba(255,255,255,0.88);
+      color: #a35374;
+      border: 1px solid #ffd3e0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(255, 175, 203, 0.14);
+    }
+
+    .mini-gallery {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .tiny-card {
+      background: rgba(255,255,255,0.74);
+      border: 1px solid #ffd8e4;
+      border-radius: 22px;
+      padding: 16px;
+      text-align: center;
+      color: #9f6179;
+      box-shadow: 0 10px 24px rgba(255, 173, 201, 0.11);
+    }
+
+    .tiny-card .emoji {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .note {
+      position: relative;
+      z-index: 1;
+      margin-top: 20px;
+      min-height: 32px;
+      color: #9b5b73;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+      font-size: 0.92rem;
+      color: #9d7583;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .card {
+        padding: 22px;
+        border-radius: 28px;
+      }
+
+      .letter {
+        padding: 20px;
+        font-size: 1rem;
+      }
+
+      .mini-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="blobs" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true"></div>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <main class="wrapper">
+    <section class="card">
+      <div class="top-row">
+        <div class="badge">🎀 made with sincerity, softness, and courage</div>
+        <div class="mini-pill">for lady kai ♡</div>
+      </div>
+
+      <div class="hero">
+        <div class="hero-icon">💌</div>
+        <h1>I’m really sorry.</h1>
+        <p class="subtitle">
+          This is my little cutesy apology page for you — not to pressure you, but to let you know
+          that I care, I miss you, and I genuinely hope you’re doing okay.
+        </p>
+      </div>
+
+      <div class="letter-wrap">
+        <div class="letter">
+          <p>
+            Hi Lady Kai, I know it’s been a tough argument between us. I’m sorry. Ayos lang naman if hindi mo tatanggapin yung apology ko,
+            pero I just want to check up on you and ask if you are doing okay.
+          </p>
+
+          <p>
+            I still care, and I’m still worried about your well-being. After all, you are my friend — best friend,
+            perhaps, if you still consider me as one.
+          </p>
+
+          <p>
+            I tried to invite your account this early morning, pero sabi ng cousin mo, hindi ikaw yung naglalaro.
+            They told me that these past few days, inaatake ka raw ng anxiety mo. That’s what led me to this point of making this
+            fancy, cutesy little apology website. Using my IT skillsets to impress you, I guess. Hehe.
+          </p>
+
+          <p>
+            I’m worried if you are doing well, because I know na tinatago mo yang anxiety mo around Vlad and the others,
+            pero hindi mo matatago yan sa akin. Miss na kita, bestie ko.
+          </p>
+
+          <p>
+            But after all that happened, I’m scared to face you too. Kasi I admit that it all happened because of me.
+            It happened because of my sensitivity. I really wish we could have a chat, if possible.
+          </p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="primary" onclick="showMessage()">click me please ♡</button>
+        <a class="ghost" href="#" onclick="copyMessage(event)">copy my apology</a>
+      </div>
+
+      <div class="mini-gallery">
+        <div class="tiny-card">
+          <span class="emoji">🌸</span>
+          made gently
+        </div>
+        <div class="tiny-card">
+          <span class="emoji">🩷</span>
+          meant sincerely
+        </div>
+        <div class="tiny-card">
+          <span class="emoji">✨</span>
+          hoping you’re okay
+        </div>
+      </div>
+
+      <p class="note" id="note"></p>
+      <p class="footer">Made sincerely, with care, softness, and a little bit of coding magic. ♡</p>
+    </section>
+  </main>
+
+  <script>
+    const hearts = document.querySelector('.hearts');
+    const sparkles = document.querySelector('.sparkles');
+    const heartSymbols = ['♡', '♥', '💗', '🩷', '౨ৎ'];
+    const sparkleSymbols = ['✦', '✧', '⋆', '✨', '❀'];
+
+    for (let i = 0; i < 26; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 8 + Math.random() * 8 + 's';
+      heart.style.animationDelay = Math.random() * 8 + 's';
+      heart.style.fontSize = 12 + Math.random() * 18 + 'px';
+      hearts.appendChild(heart);
+    }
+
+    for (let i = 0; i < 20; i++) {
+      const sparkle = document.createElement('span');
+      sparkle.className = 'sparkle';
+      sparkle.textContent = sparkleSymbols[Math.floor(Math.random() * sparkleSymbols.length)];
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.animationDuration = 10 + Math.random() * 8 + 's';
+      sparkle.style.animationDelay = Math.random() * 8 + 's';
+      sparkle.style.fontSize = 10 + Math.random() * 14 + 'px';
+      sparkles.appendChild(sparkle);
+    }
+
+    function showMessage() {
+      const notes = [
+        'No pressure. I just really hope you’re okay. ♡',
+        'Even if you need time, I’ll respect that. 🌷',
+        'I miss you, and I mean this apology sincerely. 🩷',
+        'You matter to me, always. ✨',
+        'I made this because I really care. 💌'
+      ];
+      const random = notes[Math.floor(Math.random() * notes.length)];
+      document.getElementById('note').textContent = random;
+    }
+
+    async function copyMessage(event) {
+      event.preventDefault();
+      const text = `Hi Lady Kai, I know it’s been a tough argument between us. I’m sorry. Ayos lang naman if hindi mo tatanggapin yung apology ko, pero I just want to check up on you and ask if you are doing okay. I still care, and I’m still worried about your well-being. After all, you are my friend — best friend, perhaps, if you still consider me as one. I tried to invite your account this early morning, pero sabi ng cousin mo, hindi ikaw yung naglalaro. They told me that these past few days, inaatake ka raw ng anxiety mo. That’s what led me to this point of making this fancy, cutesy little apology website. Using my IT skillsets to impress you, I guess. Hehe. I’m worried if you are doing well, because I know na tinatago mo yang anxiety mo around Vlad and the others, pero hindi mo matatago yan sa akin. Miss na kita, bestie ko. But after all that happened, I’m scared to face you too. Kasi I admit that it all happened because of me. It happened because of my sensitivity. I really wish we could have a chat, if possible.`;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        document.getElementById('note').textContent = 'Copied successfully. Sana mabasa niya. ♡';
+      } catch (error) {
+        document.getElementById('note').textContent = 'Copy failed, but the message is still here for you. 🌸';
+      }
+    }
+  </script>
+</body>
+</html>
